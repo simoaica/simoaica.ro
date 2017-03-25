@@ -23,21 +23,34 @@ $(document).ready(function() {
 
         $( ".city" ).on( "click", function() {
           $( "#weather" ).slideUp( 500 );
+          $( "#www" ).slideUp( 500 );
           $( "#modal-weather" ).css( "transform", "scale(1)" );
           $("#orasul").focus();
         });
 
         $( "#close" ).on( "click", function() {
+          $( "#orasul" ).val("");
           $( "#weather" ).slideDown( 500 );
+          $( "#www" ).slideDown( 500 );
           $( "#modal-weather" ).css( "transform", "scale(0)" );
+        });
+
+        $("#modal-weather").on('keyup',function(evt) {
+            if (evt.keyCode == 27) {
+              $( "#orasul" ).val("");
+              $( "#weather" ).slideDown( 500 );
+              $( "#www" ).slideDown( 500 );
+              $( "#modal-weather" ).css( "transform", "scale(0)" );
+            }
         });
 
         $( "#orasul" ).on('change', function(){
           $( "#weather" ).slideDown( 500 );
+          $( "#www" ).slideDown( 500 );
           $( "#modal-weather" ).css( "transform", "scale(0)" );
           oras=$( "#orasul" ).val();
           vremea(oras);
-          oras=$( "#orasul" ).val("");
+          $( "#orasul" ).val("");
         });
       },
       error: function(error) {
@@ -45,6 +58,7 @@ $(document).ready(function() {
 
         $( "#weather" ).slideDown( 500 );
         $( "#modal-weather" ).css( "transform", "scale(0)" );
+        $( "#www" ).slideDown( 500 );
       }
     });
 

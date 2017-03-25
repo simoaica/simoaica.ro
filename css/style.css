@@ -125,6 +125,7 @@ i {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 40px;
+
 }
 #weather h2 {
   margin: 0 0 8px;
@@ -138,6 +139,7 @@ i {
 #weather ul {
   margin: 0;
   padding: 0;
+
 }
 
 #weather li {
@@ -148,14 +150,64 @@ i {
   border-radius: 5px;
 	color: #694fca;
 	font-size: 14px;
+  transition: all .4s ease-in-out;
 }
 
 #weather .currently {
   margin-left: 40px;
 }
 
+#weather li:first-child:hover {
+  cursor: pointer;
+  background-color: #694fca;
+  color: #FFF;
+}
+
 .loading {
   margin: 65px 0 0;
+}
+
+/*Modal Weather*/
+
+#modal-weather {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.6);
+  transition: all .5s ease-in-out;
+  transform: scale(0);
+  z-index: 999;
+}
+
+/*Modal Container*/
+
+#modal-container{
+width: 30%;
+margin: 0 auto;
+top: 50%;
+transform: translateY(-50%);
+position: relative;
+}
+
+#orasul{
+width: 100%;
+padding: 20px;
+font-size: 24px;
+color: #694fca;
+}
+
+#close {
+  position: absolute;
+  top: -40px;
+  right: -70px;
+  font-size: 24px;
+  color: #FFF;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+#close:hover {
+  transform: scale(1.4);
 }
 
 /*Media Queries*/
@@ -167,4 +219,12 @@ i {
 	#weather .currently {
 	  margin-left: 50px;
 	}
+  #orasul{
+  font-size: 15px;
+  }
+  #close {
+    font-size: 15px;
+    top: -30px;
+    right: -65px;
+  }
 }

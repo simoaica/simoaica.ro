@@ -2,11 +2,11 @@
 
 $(document).ready(function() {
 
-  // $( "#orase" ).on('change', function(){
-  //   oras=$( "#orase" ).val();
-  //   vremea(oras);
-  // });
-  vremea("bucuresti");
+// Initializeaza vremea
+
+  vremea( "bucuresti" );
+
+// Afiseaza vremea
 
   function vremea(oras){
     $.simpleWeather({
@@ -15,16 +15,39 @@ $(document).ready(function() {
       unit: 'c',
       success: function(weather) {
         html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-        html += '<ul><li>'+weather.city+', '+weather.region+'</li>'; //+', '+weather.region
+        html += '<ul><li class="city">'+weather.city+', '+weather.region+'</li>'; //+', '+weather.region
         html += '<li class="currently">'+weather.currently+'</li>';
         html += '</ul>';
 
-        $("#weather").html(html);
+        $( "#weather" ).html(html);
+
+        $( ".city" ).on( "click", function() {
+          $( "#weather" ).slideUp( 500 );
+          $( "#modal-weather" ).css( "transform", "scale(1)" );
+          $("#orasul").focus();
+        });
+
+        $( "#close" ).on( "click", function() {
+          $( "#weather" ).slideDown( 500 );
+          $( "#modal-weather" ).css( "transform", "scale(0)" );
+        });
+
+        $( "#orasul" ).on('change', function(){
+          $( "#weather" ).slideDown( 500 );
+          $( "#modal-weather" ).css( "transform", "scale(0)" );
+          oras=$( "#orasul" ).val();
+          vremea(oras);
+          oras=$( "#orasul" ).val("");
+        });
       },
       error: function(error) {
-        $("#weather").html('<p>'+error+'</p>');
+        // $("#weather").html('<p>'+error+'</p>');
+
+        $( "#weather" ).slideDown( 500 );
+        $( "#modal-weather" ).css( "transform", "scale(0)" );
       }
     });
+
   }
 
   // Setari particule

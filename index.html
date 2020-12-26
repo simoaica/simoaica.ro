@@ -1,37 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Dan Simoaica | Web Designer - Web Developer - Photographer</title>
-    <meta name="description" content="Dan Simoaica is an Web Designer - Web Developer - Photographer based in Bucharest, Romania">
-    <meta name="author" content="Dan Simoaica" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <!-- Modal -->
-    <div id="modal-weather">
-      <div id="modal-container">
-        <div id="close">X</div>
-        <input type="text" name="orasul" id="orasul" value="" placeholder="Choose a city ...">
-      </div>
-    </div>
-    <!-- Fundal animat -->
-    <div id="particule"></div>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			Dan Simoaica | Web Designer - Web Developer - Photographer
+		</title>
+		<meta
+			name="description"
+			content="Dan Simoaica is an Web Developer - Photographer based in Bucharest, Romania"
+		/>
+		<meta name="author" content="Dan Simoaica" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Dan Simoaica - Web Developer" />
+		<meta property="og:url" content="https://www.simoaica.ro" />
+		<meta
+			property="og:description"
+			content="Dan Simoaica is an Web Developer - Photographer based in Bucharest, Romania"
+		/>
+		<meta property="og:image" content="https://simoaica.ro/img/site.jpg" />
+		<meta
+			property="og:image:secure_url"
+			content="https://simoaica.ro/img/site.jpg"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
 
-    <!-- Vremea -->
-    <div id="container">
-      <div id="weather"><img src="img/loader.gif" alt="Loading..." class="loading"><br />Loading...</div>
-      <div id="www">simoaica.ro is under construction ...</div>
-    </div>
+	<body>
+		<!-- Modal -->
+		<div id="modal-weather">
+			<div id="modal-container">
+				<div id="close">X</div>
+				<input
+					type="text"
+					name="orasul"
+					id="orasul"
+					value=""
+					placeholder="Choose a city ..."
+				/>
+			</div>
+		</div>
+		<!-- Fundal animat -->
+		<div id="particule"></div>
 
-    <!-- JS Files -->
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <script src="js/particles.min.js"></script>
-    <script src="js/jquery.simpleWeather.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+		<!-- Vremea -->
+		<div id="container">
+			<div id="weather">
+				<img
+					src="img/loader.gif"
+					alt="Loading..."
+					class="loading"
+				/><br />Loading...
+			</div>
+			<div id="www">simoaica.ro is under construction ...</div>
+		</div>
+
+		<!-- JS Files -->
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"
+		></script>
+		<script src="js/particles.min.js"></script>
+		<script src="js/jquery.simpleWeather.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
